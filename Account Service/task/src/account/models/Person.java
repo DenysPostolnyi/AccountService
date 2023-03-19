@@ -1,19 +1,30 @@
 package account.models;
 
-import javax.validation.constraints.Email;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
+@Entity
+@Table(name = "Person")
 public class Person {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
     @NotEmpty
+    @Column(name = "name")
     private String name;
     @NotEmpty
+    @Column(name = "lastname")
     private String lastname;
     @Pattern(regexp = "^[a-zA-Z]\\w+@acme.com$")
     @NotEmpty
+    @Column(name = "email")
     private String email;
     @NotEmpty
+    @Column(name = "password")
     private String password;
+    @Column(name = "role")
     private String role;
 
     public Person() {

@@ -2,6 +2,7 @@ package account.controller;
 
 import account.dto.PersonDTO;
 import account.models.Person;
+import account.services.PeopleService;
 import account.urils.ErrorResponse;
 import account.urils.IncorrectDataError;
 import account.urils.PersonMapper;
@@ -17,10 +18,12 @@ import javax.validation.Valid;
 @RequestMapping("/api/auth")
 public class AuthController {
     private final PersonMapper personMapper;
+    private final PeopleService peopleService;
 
     @Autowired
-    public AuthController(PersonMapper personMapper) {
+    public AuthController(PersonMapper personMapper, PeopleService peopleService) {
         this.personMapper = personMapper;
+        this.peopleService = peopleService;
     }
 
     @PostMapping("/signup")
@@ -29,7 +32,7 @@ public class AuthController {
             bindingResult.getFieldErrors().forEach(System.out::println);
             throw new IncorrectDataError();
         }
-        return personMapper.convertToPersonDTO(person);
+        return personMapper.convertToPersonDTO(peopleService.register(person));
     }
 
     @ExceptionHandler

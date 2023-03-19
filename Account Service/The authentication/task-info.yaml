@@ -1,30 +1,5 @@
 type: edu
 files:
-- name: src/account/AccountServiceApplication.java
-  visible: true
-  text: |-
-    package account;
-
-    import org.springframework.boot.SpringApplication;
-    import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-    @SpringBootApplication
-    public class AccountServiceApplication {
-
-        public static void main(String[] args) {
-            SpringApplication.run(AccountServiceApplication.class, args);
-        }
-
-    }
-  learner_created: false
-- name: src/resources/application.properties
-  visible: true
-  text: |-
-    server.port=28852
-    management.endpoints.web.exposure.include=*
-    management.endpoint.shutdown.enabled=true
-    spring.jackson.serialization.INDENT_OUTPUT=true
-  learner_created: false
 - name: build.gradle
   visible: true
   text: |-
@@ -610,6 +585,43 @@ files:
     }
   learner_created: true
 - name: src/account/config/SecurityConfig.java
+  visible: true
+  learner_created: true
+- name: src/account/AccountServiceApplication.java
+  visible: true
+  text: |-
+    package account;
+
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+    @SpringBootApplication
+    public class AccountServiceApplication {
+
+        public static void main(String[] args) {
+            SpringApplication.run(AccountServiceApplication.class, args);
+        }
+
+    }
+  learner_created: false
+- name: src/resources/application.properties
+  visible: true
+  text: |-
+    server.port=28852
+    management.endpoints.web.exposure.include=*
+    management.endpoint.shutdown.enabled=true
+    spring.jackson.serialization.INDENT_OUTPUT=true
+  learner_created: false
+- name: src/account/repositories/PeopleRepository.java
+  visible: true
+  learner_created: true
+- name: src/account/services/PeopleService.java
+  visible: true
+  learner_created: true
+- name: src/account/controller/EmployerController.java
+  visible: true
+  learner_created: true
+- name: src/account/config/RestAuthenticationEntryPoint.java
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/learn/step/16602#comment
