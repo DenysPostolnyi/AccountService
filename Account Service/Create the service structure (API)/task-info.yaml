@@ -279,6 +279,27 @@ files:
         implementation group: 'org.hibernate', name: 'hibernate-validator', version: '6.1.0.Final'
     }
   learner_created: false
+- name: src/account/controller/AuthController.java
+  visible: true
+  learner_created: true
+- name: src/account/dto/PersonDTO.java
+  visible: true
+  learner_created: true
+- name: src/account/urils/PersonMapper.java
+  visible: true
+  learner_created: true
+- name: src/account/urils/IncorrectDataError.java
+  visible: true
+  learner_created: true
+- name: src/account/urils/ErrorResponse.java
+  visible: true
+  learner_created: true
+- name: src/account/models/Person.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/16601#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sat, 18 Mar 2023 18:44:30 UTC"
+record: 1
